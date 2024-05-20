@@ -1,0 +1,33 @@
+<!-- Place details page -->
+
+<h1><%= @place.name %></h1>
+
+<h3>Entries</h3>
+
+<ul style="list-style-type: none; padding: 0;"> 
+  <% @entries.each do |entry| %>
+    <li>
+      <a href="/entries/<%= entry.id %>">
+        <%= entry.title %>
+      </a>
+    </li>
+    <li><strong>Description:</strong> <%= entry.description %></li>
+    <li><strong>Posted on:</strong> <%= entry.posted_on %></li>
+    <li><strong>Created at:</strong> <%= entry.created_at %></li>
+    <li><strong>Updated at:</strong> <%= entry.updated_at %></li>
+  <% end %>
+</ul>
+
+<p>
+  <form action="/entries/new" method="get">
+    <input type="hidden" name="place_id" value="<%= @place.id %>">
+    <input type="submit" value="New Entry">
+  </form>
+</p>
+
+<p><a href="/places" style="text-decoration: none;">Back to All Places</a></p>
+
+<form action="/places/<%= @place.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Place">
+</form>

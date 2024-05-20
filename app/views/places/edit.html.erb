@@ -1,0 +1,19 @@
+<h1>Edit Place</h1>
+
+<form action="/places/<%= @place["id"] %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <p>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="<%= @place["name"] %>">
+  </p>
+
+  <p>
+    <label for="created_at">Created at:</label>
+    <input type="datetime" name="created_at" value="<%= @place["created_at"] %>">
+
+    <label for="updated_at">Updated at:</label>
+    <input type="datetime" name="updated_at" value="<%= @place["updated_at"] %>">
+  </p>
+  <button>Save</button>
+</form>

@@ -1,0 +1,12 @@
+<!-- Entry details page -->
+
+<h1><%= @entry["title"] %></h1>
+
+<ul style="list-style-type: none; padding: 0;"> <!-- Remove bullets and padding -->
+  <li><strong>Description:</strong> <%= @entry["description"] %></li>
+  <li><strong>Posted on:</strong> <%= @entry["posted_on"] %></li>
+  <li><strong>Created at:</strong> <%= @entry["created_at"] %></li>
+  <li><strong>Updated at:</strong> <%= @entry["updated_at"] %></li>
+</ul>
+
+<p><a href="/places/<%= @place["id"] %>">Back to <%= @place["name"] %></a></p>
